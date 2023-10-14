@@ -21,9 +21,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Morsecode with Ruby <a name="about-project"></a>
+# 📖 School Library <a name="about-project"></a>
 
-Morsecode with Ruby Project is a project solve the morsecode challenge using ruby language .
+School Library is a Ruby app with classes for students and teachers, implementing encapsulation and inheritance, and enabling command-line execution.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -37,7 +37,7 @@ Morsecode with Ruby Project is a project solve the morsecode challenge using rub
 
 Key features of the application.
 
-- **Decode Morsecode message**
+- **School Library**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,8 +81,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-Features will be added to the project: **New Tables**
-
 - **Not yet determined**
 
 <!-- CONTRIBUTING -->
@@ -107,6 +105,6 @@ I would like to thank Microverse for including this in their curriculum.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/vikas924/oop-school-library/blob/86fe22512f873f88691198dc55c3e4ea04f31982/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
