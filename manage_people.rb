@@ -1,10 +1,12 @@
+
+
 def create_teacher
   print "teacher's specialization: "
-  specialization = gets.chomp
+  specialization = @input.specialization_input
   print "teacher's age: "
-  age = gets.chomp
+  age = @input.age_input
   print "teacher's name: "
-  name = gets.chomp
+  name =  @input.name_input
   teacher = Teacher.new(age, name, specialization, parent_permission: true)
   @people << teacher
   puts 'You have successfully registered a Teacher'
@@ -12,11 +14,11 @@ end
 
 def create_student
   print 'Age: '
-  age = Integer(gets.chomp)
+  age = @input.age_input
   print 'Name: '
-  name = gets.chomp
+  name = @input.name_input
   print 'Has parent permission? [Y/N]'
-  parent_permission = gets.chomp.downcase
+  parent_permission = @input.parent_permission_input
 
   case parent_permission
   when 'n'

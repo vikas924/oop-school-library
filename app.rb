@@ -3,6 +3,7 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'manage_people'
+require_relative 'inputs'
 
 class App
   attr_accessor :books, :people, :rentals
@@ -11,19 +12,32 @@ class App
     @books = []
     @people = []
     @rentals = []
+    @input = Input.new
   end
 
   def list_books
-    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+    if @books.empty?
+      puts 'There are no books yet'
+    else
+      @books.each do |book|
+        puts "Title: #{book.title}, Author: #{book.author}"
+      end
+    end
   end
 
   def list_people
-    @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+    if @people.empty?
+      puts 'There are no people'
+    else
+      @people.each do |person|
+        puts "[#{person.class}] Name: #{person.name} ID: #{person.id} Age: #{person.age}"
+      end
+    end
   end
 
   def create_person
-    print 'Do you want to create a new student (1) or teacher (2)? [Inout the number]: '
-    selected_person_type = Integer(gets.chomp)
+    selected_person_type = @input.person_input
+
     case selected_person_type
     when 1
       create_student
@@ -34,11 +48,14 @@ class App
 
   def create_book
     print 'Title: '
-    title = gets.chomp
+    title = @input.title_input
     print 'Author: '
-    author = gets.chomp
+    author = @input.author_input
+
     book = Book.new(title, author)
     @books << book
+
+    puts 'Book created successfully'
   end
 
   def create_rental
@@ -52,17 +69,16 @@ class App
 
     puts 'Select a book from the following list of number'
     @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
-    selected_book = Integer(gets.chomp)
+    selected_book = @input.book_index_input(@books.size)
 
     puts 'Select a person from the following list of number (not ID)'
     @people.each_with_index do |person, index|
       puts "#{index}) Name: #{person.name} Age: #{person.age} Id: #{person.id}"
     end
 
-    selected_person = Integer(gets.chomp)
+    selected_person = @input.person_index_input(@people.size)
 
-    puts 'Date MM/DD/YYYY : '
-    selected_date = gets.chomp.to_s
+    selected_date = @input.date_input
 
     rented = Rental.new(selected_date, @books[selected_book], @people[selected_person])
     @rentals << rented
