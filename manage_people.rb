@@ -1,12 +1,10 @@
-
-
 def create_teacher
   print "teacher's specialization: "
   specialization = @input.specialization_input
   print "teacher's age: "
   age = @input.age_input
   print "teacher's name: "
-  name =  @input.name_input
+  name = @input.name_input
   teacher = Teacher.new(age, name, specialization, parent_permission: true)
   @people << teacher
   puts 'You have successfully registered a Teacher'
