@@ -77,6 +77,10 @@ Clone this repository to your desired folder:
 - Twitter: [@vikas410190](https://twitter.com/vikas410190)
 - LinkedIn: [Vikas Singh](https://www.linkedin.com/in/vikas-singh-586a07132/)
 
+👤 **Fatuma Hussein**
+
+- GitHub: [@fatmahussein](https://github.com/fatmahussein)
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
