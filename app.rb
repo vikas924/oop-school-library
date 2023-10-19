@@ -15,8 +15,8 @@ class App
     @rentals = []
     @input = Input.new
   end
-  
-def fetch_data(file)
+
+  def fetch_data(file)
     if File.exist?("db/#{file}.json")
       File.read("db/#{file}.json")
     else
@@ -24,8 +24,8 @@ def fetch_data(file)
       File.write("db/#{file}.json", empty_json)
       empty_json
     end
-end
-  
+  end
+
   def load_data
     books = JSON.parse(fetch_data('books'))
     people = JSON.parse(fetch_data('people'))
@@ -43,7 +43,7 @@ end
                  end
     end
 
-      rentals.each do |rental|
+    rentals.each do |rental|
       rentee = @people.select { |person| person.name == rental['person_name'] }
       rented_book = @books.select { |book| book.title == rental['book_titles'] }
       @rentals << Rental.new(rental['date'], rented_book[0], rentee[0])
