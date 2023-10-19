@@ -24,7 +24,7 @@ def fetch_data(file)
       File.write("db/#{file}.json", empty_json)
       empty_json
     end
-  end
+end
   
   def load_data
     books = JSON.parse(fetch_data('books'))
