@@ -1,29 +1,18 @@
-require_relative '../person'
-require_relative '../capitalizedecorator'
-require_relative '../trimmerdecorator'
+require_relative '../decorator'
 
-describe CapitalizeDecorator do
-  let(:nameable) { double('Nameable', correct_name: 'maximilianus') }
-  let(:decorator) { CapitalizeDecorator.new(nameable) }
+describe Decorator do
+  let(:nameable) { double('nameable', correct_name: 'Original Name') }
+  let(:decorator) { Decorator.new(nameable) }
 
-  describe 'Check Proper Capitalization Decoration' do
-    it 'should Decorate a Person name' do
-      expect(decorator.correct_name).to eq('Maximilianus')
+  context 'attributes' do
+    it 'has a nameable object' do
+      expect(decorator.instance_variable_get(:@nameable)).to eq(nameable)
     end
   end
-end
 
-describe TrimmerDecorator do
-  let(:nameable) { double('Nameable') }
-  let(:decorator) { TrimmerDecorator.new(nameable) }
-
-  describe 'Check Proper Trimmer Decoration' do
-    context 'when the name is longer than 10 characters' do
-      it 'trims the name to 10 characters' do
-        allow(nameable).to receive(:correct_name).and_return('Maximilianus')
-
-        expect(decorator.correct_name).to eq('Maximilian')
-      end
+  context 'correct_name' do
+    it 'delegates correct_name to the nameable object' do
+      expect(decorator.correct_name).to eq('Original Name')
     end
   end
 end
