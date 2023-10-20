@@ -4,8 +4,8 @@ require_relative '../classroom'
 describe ClassRoom do
   context 'Check Classroom Class ' do
     it 'should create a class room' do
-    class_room = ClassRoom.new('CS101')
-    expect(class_room.label).to eq('CS101')
+      class_room = ClassRoom.new('CS101')
+      expect(class_room.label).to eq('CS101')
     end
   end
 
