@@ -60,7 +60,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  gh repo clone https://github.com/Zafron047/Morse_Code_with_Ruby.git
+ git@github.com:vikas924/oop-school-library.git
 ```
 
 ### Install
